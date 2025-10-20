@@ -10,27 +10,33 @@ import { features, howToUseSteps, pricingPlans } from "@/lib/constants";
 
 function HeroSection() {
   return (
-    <section className="bg-gradient-to-r from-sky-500 to-sky-400 text-white py-24 px-6 text-center">
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-sm"
-      >
-        海外仕入れから国内配送まで、海外物販はぜんぶおまかせ！
-      </motion.h1>
-      <p className="text-lg md:text-xl mb-8 leading-relaxed">
-        <strong>まるなげ！ザ・ワールドEC</strong>（海外輸出入支援） は、<br />
-        面倒な配送管理・利益計算・在庫感ををまるっとサポート。<br />
-        面倒な手配や計算はもう必要なし！
-      </p>
-      <div className="flex justify-center gap-4 flex-wrap">
-        <Button size="lg" className="bg-white text-sky-600 hover:bg-sky-50 font-semibold">
-          🎁 無料で相談する
-        </Button>
-        <Button size="lg" variant="secondary" className="bg-transparent border border-white text-white hover:bg-white hover:text-sky-600">
-          💡 料金プランを見る
-        </Button>
+    <section
+      className="relative bg-cover bg-center text-white py-24 px-6 text-center"
+      style={{ backgroundImage: "url('https://images.unsplash.com/photo-1586528116311-06924151d145?q=80&w=2070&auto=format&fit=crop')" }}
+    >
+      <div className="absolute inset-0 bg-sky-800 opacity-70"></div>
+      <div className="relative z-10">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg"
+        >
+          海外仕入れから国内配送まで、海外物販はぜんぶおまかせ！
+        </motion.h1>
+        <p className="text-lg md:text-xl mb-8 leading-relaxed drop-shadow-md">
+          <strong>まるなげ！ザ・ワールドEC</strong>（海外輸出入支援） は、<br />
+          面倒な配送管理・利益計算・在庫管理をまるっとサポート。<br />
+          面倒な手配や計算はもう必要なし！
+        </p>
+        <div className="flex justify-center gap-4 flex-wrap">
+          <Button size="lg" className="bg-white text-sky-600 hover:bg-sky-50 font-semibold">
+            🎁 無料で相談する
+          </Button>
+          <Button size="lg" variant="secondary" className="bg-transparent border border-white text-white hover:bg-white hover:text-sky-600">
+            💡 料金プランを見る
+          </Button>
+        </div>
       </div>
     </section>
   );
