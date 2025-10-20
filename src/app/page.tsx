@@ -17,11 +17,11 @@ function HeroSection() {
         transition={{ duration: 0.5 }}
         className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-sm"
       >
-        海外のお買い物、ぜ〜んぶおまかせ！
+        海外仕入れから国内配送まで、海外物販はぜんぶおまかせ！
       </motion.h1>
       <p className="text-lg md:text-xl mb-8 leading-relaxed">
-        <strong>まるなげ！ザ・ワールドEC</strong> は、<br />
-        海外での仕入れから日本へのお届けまでをまるっとサポート。<br />
+        <strong>まるなげ！ザ・ワールドEC</strong>（海外輸出入支援） は、<br />
+        面倒な配送管理・利益計算・在庫感ををまるっとサポート。<br />
         面倒な手配や計算はもう必要なし！
       </p>
       <div className="flex justify-center gap-4 flex-wrap">
