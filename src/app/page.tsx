@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { features, howToUseSteps, pricingPlans } from "@/lib/constants";
@@ -12,7 +13,7 @@ function HeroSection() {
   return (
     <section
       className="relative bg-cover bg-center text-white py-24 px-6 text-center"
-      style={{ backgroundImage: "url('https://images.unsplash.com/photo-1586528116311-06924151d145?q=80&w=2070&auto=format&fit=crop')" }}
+      style={{ backgroundImage: "url('/images/hero-background.jpg')" }}
     >
       <div className="absolute inset-0 bg-sky-800 opacity-70"></div>
       <div className="relative z-10">
@@ -45,12 +46,22 @@ function HeroSection() {
 function FeaturesSection() {
   return (
     <section className="py-20 px-6 max-w-6xl mx-auto text-center">
-      <h2 className="text-3xl font-bold mb-12 text-sky-700">まるなげ！が選ばれる3つのポイント</h2>
+      <h2 className="text-3xl font-bold text-sky-700">まるなげ！が選ばれる3つのポイント</h2>
+      <p className="text-lg text-gray-600 mt-4 mb-12">事業を加速させる、シンプルで強力な機能</p>
       <div className="grid md:grid-cols-3 gap-8">
         {features.map((feature) => {
           const Icon = feature.icon;
           return (
             <Card key={feature.id} className="shadow-sm border-none hover:shadow-lg transition">
+              <div className="relative h-48 w-full">
+                <Image
+                  src={feature.image}
+                  alt={feature.title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-t-lg"
+                />
+              </div>
               <CardContent className="py-10">
                 <Icon className="w-10 h-10 text-sky-500 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2 text-sky-700">{feature.title}</h3>
