@@ -21,11 +21,11 @@ function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl md:text-5xl font-bold mb-4 text-shadow-lg"
+          className="text-3xl md:text-5xl font-bold mb-4 text-shadow-lg"
         >
           海外仕入れから国内配送まで、海外物販はぜんぶおまかせ！
         </motion.h1>
-        <p className="text-lg md:text-xl mb-8 leading-relaxed text-shadow-md">
+        <p className="text-base md:text-xl mb-8 leading-relaxed text-shadow-md">
           <strong>まるなげ！ザ・ワールドEC</strong>（海外輸出入支援） は、<br />
           面倒な配送管理・利益計算・在庫管理をまるっとサポート。<br />
           面倒な手配や計算はもう必要なし！
@@ -46,9 +46,9 @@ function HeroSection() {
 function FeaturesSection() {
   return (
     <section className="py-20 px-6 max-w-6xl mx-auto text-center">
-      <h2 className="text-3xl font-bold text-sky-700">まるなげ！が選ばれる3つのポイント</h2>
-      <p className="text-lg text-gray-600 mt-4 mb-12">事業を加速させる、シンプルで強力な機能</p>
-      <div className="grid md:grid-cols-3 gap-8">
+      <h2 className="text-2xl md:text-3xl font-bold text-sky-700">まるなげ！が選ばれる3つのポイント</h2>
+      <p className="text-base md:text-lg text-gray-600 mt-4 mb-12">事業を加速させる、シンプルで強力な機能</p>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {features.map((feature) => {
           const Icon = feature.icon;
           return (
@@ -85,8 +85,8 @@ function FeaturesSection() {
 function HowToUseSection() {
   return (
     <section className="bg-sky-50 py-20 px-6">
-      <h2 className="text-3xl font-bold text-center text-sky-700 mb-12">ご利用はカンタン4ステップ！</h2>
-      <div className="max-w-5xl mx-auto grid md:grid-cols-4 gap-8">
+      <h2 className="text-2xl md:text-3xl font-bold text-center text-sky-700 mb-12">ご利用はカンタン4ステップ！</h2>
+      <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {howToUseSteps.map((s) => (
           <Card key={s.id} className="text-center border-none shadow-lg bg-white hover:shadow-xl transition-shadow duration-300">
             <CardContent className="py-8">
@@ -104,8 +104,8 @@ function HowToUseSection() {
 function PricingSection() {
   return (
     <section className="py-20 px-6 max-w-6xl mx-auto">
-      <h2 className="text-3xl font-bold text-center text-sky-700 mb-12">荷受手数料0円・国内配送手数料0円で、明朗会計！</h2>
-      <div className="grid md:grid-cols-3 gap-8">
+      <h2 className="text-2xl md:text-3xl font-bold text-center text-sky-700 mb-12">荷受手数料0円・国内配送手数料0円で、明朗会計！</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {pricingPlans.map((p) => (
           <Card key={p.id} className="text-center border-none bg-gradient-to-br from-sky-50 to-sky-100 shadow-lg hover:shadow-2xl transition-all duration-300">
             <CardContent className="py-10">
@@ -126,8 +126,8 @@ function PricingSection() {
 function CtaSection() {
   return (
     <section className="bg-gradient-to-r from-sky-600 to-sky-400 text-white text-center py-20 px-6">
-      <h2 className="text-3xl font-bold mb-4">海外輸入を、もっとやさしく。</h2>
-      <p className="mb-8 text-lg leading-relaxed">むずかしいことはナシ！<br />管理・配送・損益計算まで、全部“まるなげ”しちゃおう。</p>
+      <h2 className="text-2xl md:text-3xl font-bold mb-4">海外輸入を、もっとやさしく。</h2>
+      <p className="mb-8 text-base md:text-lg leading-relaxed">むずかしいことはナシ！<br />管理・配送・損益計算まで、全部“まるなげ”しちゃおう。</p>
       <div className="flex justify-center gap-4 flex-wrap">
         <Button size="lg" className="bg-white text-sky-600 hover:bg-sky-50 font-semibold">無料相談する</Button>
         <Button size="lg" variant="secondary" className="border border-white text-white hover:bg-white hover:text-sky-600">資料をもらう</Button>
