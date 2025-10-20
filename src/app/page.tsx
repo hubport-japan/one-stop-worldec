@@ -21,11 +21,11 @@ function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg"
+          className="text-4xl md:text-5xl font-bold mb-4 text-shadow-lg"
         >
           海外仕入れから国内配送まで、海外物販はぜんぶおまかせ！
         </motion.h1>
-        <p className="text-lg md:text-xl mb-8 leading-relaxed drop-shadow-md">
+        <p className="text-lg md:text-xl mb-8 leading-relaxed text-shadow-md">
           <strong>まるなげ！ザ・ワールドEC</strong>（海外輸出入支援） は、<br />
           面倒な配送管理・利益計算・在庫管理をまるっとサポート。<br />
           面倒な手配や計算はもう必要なし！
@@ -52,7 +52,7 @@ function FeaturesSection() {
         {features.map((feature) => {
           const Icon = feature.icon;
           return (
-            <Card key={feature.id} className="shadow-sm border-none hover:shadow-lg transition">
+            <Card key={feature.id} className="border-none shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
               <div className="relative h-48 w-full">
                 <Image
                   src={feature.image}
@@ -88,7 +88,7 @@ function HowToUseSection() {
       <h2 className="text-3xl font-bold text-center text-sky-700 mb-12">ご利用はカンタン4ステップ！</h2>
       <div className="max-w-5xl mx-auto grid md:grid-cols-4 gap-8">
         {howToUseSteps.map((s) => (
-          <Card key={s.id} className="text-center border-none shadow-sm bg-white hover:shadow-md transition">
+          <Card key={s.id} className="text-center border-none shadow-lg bg-white hover:shadow-xl transition-shadow duration-300">
             <CardContent className="py-8">
               <div className="text-sky-600 font-bold mb-2">{s.step}</div>
               <h3 className="text-lg font-semibold mb-2 text-sky-700">{s.title}</h3>
@@ -107,7 +107,7 @@ function PricingSection() {
       <h2 className="text-3xl font-bold text-center text-sky-700 mb-12">荷受手数料0円・国内配送手数料0円で、明朗会計！</h2>
       <div className="grid md:grid-cols-3 gap-8">
         {pricingPlans.map((p) => (
-          <Card key={p.id} className="text-center border-sky-100 shadow-sm hover:shadow-lg transition">
+          <Card key={p.id} className="text-center border-none bg-gradient-to-br from-sky-50 to-sky-100 shadow-lg hover:shadow-2xl transition-all duration-300">
             <CardContent className="py-10">
               <h3 className="text-xl font-bold text-sky-600 mb-2">{p.plan}</h3>
               <p className="text-2xl font-semibold mb-3">{p.price}</p>
@@ -125,7 +125,7 @@ function PricingSection() {
 
 function CtaSection() {
   return (
-    <section className="bg-sky-500 text-white text-center py-20 px-6">
+    <section className="bg-gradient-to-r from-sky-600 to-sky-400 text-white text-center py-20 px-6">
       <h2 className="text-3xl font-bold mb-4">海外輸入を、もっとやさしく。</h2>
       <p className="mb-8 text-lg leading-relaxed">むずかしいことはナシ！<br />管理・配送・損益計算まで、全部“まるなげ”しちゃおう。</p>
       <div className="flex justify-center gap-4 flex-wrap">
