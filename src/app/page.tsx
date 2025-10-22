@@ -13,7 +13,7 @@ import { Check, Minus } from "lucide-react";
 
 function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-br from-sky-50 to-sky-200 py-24 px-6 text-center overflow-hidden">
+    <section className="relative bg-gradient-to-br from-sky-50 to-sky-200 py-24 px-6 text-center md:text-left overflow-hidden">
       <div className="absolute -left-16 -top-16 w-64 h-64 bg-sky-200 rounded-full opacity-50"></div>
       <div className="absolute -right-16 -bottom-16 w-64 h-64 bg-sky-200 rounded-full opacity-50"></div>
       <div className="relative z-10 max-w-4xl mx-auto">
@@ -21,7 +21,7 @@ function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl md:text-6xl font-extrabold mb-4 text-sky-800"
+          className="text-3xl md:text-5xl font-extrabold mb-4 text-sky-800"
           style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.1)" }}
         >
           海外仕入れから国内配送まで、海外物販はぜんぶおまかせ！
@@ -35,7 +35,7 @@ function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex justify-center gap-4 flex-wrap"
+          className="flex justify-center md:justify-start gap-4 flex-wrap"
         >
           <Button asChild size="lg" className="bg-sky-500 text-white hover:bg-sky-600 font-semibold shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
             <Link href="/contact">
@@ -55,13 +55,13 @@ function HeroSection() {
 
 function FeaturesSection() {
   return (
-    <section id="features" className="py-24 px-6">
+    <section id="features" className="bg-white py-24 px-6">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-sky-700 mb-2">
             まるなげ！が選ばれる理由
           </h2>
-          <p className="text-gray-600 md:text-lg">
+          <p className="text-gray-600 text-md md:text-lg">
             海外仕入れから国内配送まで、ぜ〜んぶおまかせ。
           </p>
         </div>
@@ -91,13 +91,13 @@ function FeaturesSection() {
               ),
             },
           ].map((feature, index) => (
-            <div key={index} className={`flex flex-col md:flex-row items-center gap-12 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
-              <div className="md:w-3/5">
+            <div key={index} className={`md:flex md:items-center md:gap-12 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
+              <div className="md:w-3/5 mb-8 md:mb-0">
                 <Image src={feature.image} alt={feature.title} width={500} height={375} className="mx-auto rounded-lg shadow-2xl" />
               </div>
-              <div className={`md:w-1/2 relative ${index % 2 !== 0 ? 'md:-mr-16' : 'md:-ml-16'}`}>
+              <div className={`md:w-1/2 relative md:-ml-16 ${index % 2 !== 0 ? 'md:ml-0 md:-mr-16' : ''}`}>
                 <Card className="shadow-xl">
-                  <CardContent className="p-6 md:p-8">
+                  <CardContent className="p-6 md:p-8 text-center md:text-left">
                     <h3 className="text-xl md:text-2xl font-bold text-sky-700 mb-4">{feature.title}</h3>
                     <p className="text-gray-600 leading-relaxed mb-4">{feature.desc}</p>
                     <div className="text-md text-gray-500">{feature.note}</div>
@@ -119,7 +119,7 @@ function HowToUseSection() {
         <h2 className="text-3xl md:text-4xl font-bold text-sky-700 mb-4">
           ご利用はカンタン4ステップ！
         </h2>
-        <p className="text-gray-600 md:text-lg mb-16">
+        <p className="text-gray-600 text-md md:text-lg mb-16">
           お申し込み後、すぐにサービスをご利用いただけます。
         </p>
         <div className="relative grid md:grid-cols-4 gap-8 md:gap-0">
@@ -127,12 +127,12 @@ function HowToUseSection() {
             const Icon = s.icon;
             return (
               <div key={s.id} className="relative flex flex-col items-center px-4">
-                <div className="relative z-10 flex items-center justify-center w-24 h-24 bg-white rounded-full shadow-lg border-4 border-sky-100">
-                  <Icon className="w-12 h-12 text-sky-500" />
+                <div className="relative z-10 flex items-center justify-center w-20 h-20 md:w-24 md:h-24 bg-white rounded-full shadow-lg border-4 border-sky-100">
+                  <Icon className="w-10 h-10 md:w-12 md:h-12 text-sky-500" />
                 </div>
                 <div className="mt-4">
                   <div className="text-sky-600 font-bold mb-2">{s.step}</div>
-                  <h3 className="text-xl font-semibold mb-2 text-sky-800">{s.title}</h3>
+                  <h3 className="text-lg md:text-xl font-semibold mb-2 text-sky-800">{s.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
                 </div>
                 {i < howToUseSteps.length - 1 && (
@@ -149,13 +149,13 @@ function HowToUseSection() {
 
 function PricingSection() {
   return (
-    <section id="pricing" className="py-24 px-6">
+    <section id="pricing" className="bg-white py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-sky-700 mb-4">
             あなたにぴったりの料金プラン
           </h2>
-          <p className="text-gray-600 md:text-lg">
+          <p className="text-gray-600 text-md md:text-lg">
             荷受・国内配送料はいつでも0円。シンプルで分かりやすい料金体系です。
           </p>
         </div>
@@ -164,9 +164,9 @@ function PricingSection() {
           <table className="w-full min-w-[700px] border-collapse text-center bg-white">
             <thead>
               <tr className="bg-sky-50">
-                <th className="w-1/4 p-6 text-left font-semibold text-sky-800">機能</th>
+                <th className="w-1/4 p-4 md:p-6 text-left font-semibold text-sky-800">機能</th>
                 {pricingPlans.map((p) => (
-                  <th key={p.id} className="w-1/4 p-6 border-l border-gray-200">
+                  <th key={p.id} className="w-1/4 p-4 md:p-6 border-l border-gray-200">
                     <h3 className="text-xl font-bold text-sky-600">{p.plan}</h3>
                   </th>
                 ))}
@@ -182,9 +182,9 @@ function PricingSection() {
                   </tr>
                   {category.items.map((item) => (
                     <tr key={item.name} className="border-t border-gray-200">
-                      <td className="text-left p-4 font-medium text-gray-800">{item.name}</td>
+                      <td className="text-left p-3 md:p-4 font-medium text-gray-800">{item.name}</td>
                       {item.values.map((value, index) => (
-                        <td key={index} className="p-4 text-gray-600 border-l border-gray-200">
+                        <td key={index} className="p-3 md:p-4 text-gray-600 border-l border-gray-200">
                           {value === "✓" ? (
                             <Check className="mx-auto text-green-500" />
                           ) : value === "-" ? (
@@ -203,7 +203,7 @@ function PricingSection() {
               <tr className="bg-gray-50">
                 <td></td>
                 {pricingPlans.map((p) => (
-                  <td key={p.id} className="p-6 border-l border-gray-200">
+                  <td key={p.id} className="p-4 md:p-6 border-l border-gray-200">
                     <Button asChild className="w-full bg-sky-500 hover:bg-sky-600">
                       <Link href="/contact">このプランで始める</Link>
                     </Button>
@@ -220,13 +220,13 @@ function PricingSection() {
 
 function CaseStudiesSection() {
   return (
-    <section id="case-study" className="bg-white py-24 px-6">
+    <section id="case-study" className="bg-sky-50 py-24 px-6">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-sky-700 mb-2">
             お客様の声・導入事例
           </h2>
-          <p className="text-gray-600 md:text-lg">
+          <p className="text-gray-600 text-md md:text-lg">
             「まるなげ！」でビジネスを加速させたお客様の声をご紹介します。
           </p>
         </div>
@@ -264,10 +264,10 @@ function CaseStudiesSection() {
 
 function CtaSection() {
   return (
-    <section className="relative bg-sky-50 py-24 px-6 overflow-hidden">
+    <section className="relative bg-white py-24 px-6 overflow-hidden">
       <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-sky-200 rounded-full opacity-50"></div>
       <div className="absolute -top-24 -right-24 w-72 h-72 bg-sky-200 rounded-full opacity-50"></div>
-      <div className="relative max-w-4xl mx-auto text-center bg-white/60 backdrop-blur-sm p-12 rounded-2xl shadow-lg border border-white">
+      <div className="relative max-w-4xl mx-auto text-center bg-sky-50/60 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-lg border border-white">
         <h2 className="text-2xl md:text-4xl font-bold text-sky-800 mb-4">
           さあ、あなたも「まるなげ」でビジネスを加速させませんか？
         </h2>
