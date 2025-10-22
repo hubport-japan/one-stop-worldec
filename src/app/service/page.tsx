@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { features, howToUseSteps, supportFeatures } from "@/lib/constants";
-import { ArrowRight } from "lucide-react";
+import { howToUseSteps, supportFeatures } from "@/lib/constants";
+import { ArrowRight, Calculator, Truck, Globe2 } from "lucide-react";
 
 function ServiceHeroSection() {
   return (
@@ -24,6 +24,27 @@ function ServiceHeroSection() {
 }
 
 function FeaturesSection() {
+  const features = [
+    {
+      id: "feature-1",
+      icon: Calculator,
+      title: "損益も自動でパッと見える！",
+      desc: "注文・配送・経費を自動計算。利益がどれくらい出ているか、すぐにチェックできます。",
+    },
+    {
+      id: "feature-2",
+      icon: Truck,
+      title: "荷受けからお届けまで全部おまかせ！",
+      desc: "海外→日本までの配送をワンストップで管理。荷受手数料も国内手数料も0円です。",
+    },
+    {
+      id: "feature-3",
+      icon: Globe2,
+      title: "仕入れも出品も“ほぼ自動化”",
+      desc: "提携の出品代行サービスと組み合わせれば、まるで自動販売機のように動きます。",
+    },
+  ];
+
   return (
     <section className="py-20 px-6 max-w-6xl mx-auto">
       <h2 className="text-3xl font-bold text-center text-sky-700 mb-12">
