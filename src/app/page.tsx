@@ -13,7 +13,7 @@ import { Check, Minus } from "lucide-react";
 
 function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-br from-sky-50 to-sky-200 py-24 px-6 text-center md:text-left overflow-hidden">
+    <section className="relative bg-gradient-to-br from-sky-50 to-sky-200 py-20 md:py-24 px-6 text-left overflow-hidden">
       <div className="absolute -left-16 -top-16 w-64 h-64 bg-sky-200 rounded-full opacity-50"></div>
       <div className="absolute -right-16 -bottom-16 w-64 h-64 bg-sky-200 rounded-full opacity-50"></div>
       <div className="relative z-10 max-w-4xl mx-auto">
@@ -21,7 +21,7 @@ function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl md:text-5xl font-extrabold mb-4 text-sky-800"
+          className="text-4xl md:text-5xl font-extrabold mb-4 text-sky-800"
           style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.1)" }}
         >
           海外仕入れから国内配送まで、海外物販はぜんぶおまかせ！
@@ -35,7 +35,7 @@ function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex justify-center md:justify-start gap-4 flex-wrap"
+          className="flex gap-4 flex-wrap"
         >
           <Button asChild size="lg" className="bg-sky-500 text-white hover:bg-sky-600 font-semibold shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
             <Link href="/contact">
@@ -55,18 +55,18 @@ function HeroSection() {
 
 function FeaturesSection() {
   return (
-    <section id="features" className="bg-white py-24 px-6">
-      <div className="max-w-5xl mx-auto">
+    <section id="features" className="bg-white py-12 md:py-24">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-sky-700 mb-2">
             まるなげ！が選ばれる理由
           </h2>
-          <p className="text-gray-600 text-md md:text-lg">
+          <p className="text-gray-600 text-md md:text-lg max-w-2xl mx-auto">
             海外仕入れから国内配送まで、ぜ〜んぶおまかせ。
           </p>
         </div>
 
-        <div className="space-y-20">
+        <div className="space-y-16 md:space-y-20">
           {[
             {
               image: "/images/feature-illust-01.png",
@@ -91,18 +91,18 @@ function FeaturesSection() {
               ),
             },
           ].map((feature, index) => (
-            <div key={index} className={`md:flex md:items-center md:gap-12 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
-              <div className="md:w-3/5 mb-8 md:mb-0">
-                <Image src={feature.image} alt={feature.title} width={500} height={375} className="mx-auto rounded-lg shadow-2xl" />
-              </div>
-              <div className={`md:w-1/2 relative md:-ml-16 ${index % 2 !== 0 ? 'md:ml-0 md:-mr-16' : ''}`}>
-                <Card className="shadow-xl">
-                  <CardContent className="p-6 md:p-8 text-center md:text-left">
-                    <h3 className="text-xl md:text-2xl font-bold text-sky-700 mb-4">{feature.title}</h3>
+            <div key={index} className={`py-12 px-6 ${index % 2 !== 0 ? 'bg-sky-50' : 'bg-white'}`}>
+              <div className={`md:flex md:items-center md:gap-8 max-w-6xl mx-auto ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
+                <div className="md:w-3/5 mb-8 md:mb-0">
+                  <Image src={feature.image} alt={feature.title} width={500} height={375} className="mx-auto rounded-lg shadow-2xl" />
+                </div>
+                <div className={`text-center md:text-left md:w-1/2 md:relative ${index % 2 !== 0 ? 'md:ml-0 md:-mr-12' : 'md:-ml-12'}`}>
+                  <div className="md:shadow-xl md:bg-white md:rounded-lg p-6 md:p-8">
+                    <h3 className="text-2xl font-bold text-sky-700 mb-4">{feature.title}</h3>
                     <p className="text-gray-600 leading-relaxed mb-4">{feature.desc}</p>
                     <div className="text-md text-gray-500">{feature.note}</div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
@@ -114,7 +114,7 @@ function FeaturesSection() {
 
 function HowToUseSection() {
   return (
-    <section id="how-to-use" className="bg-sky-50 py-24 px-6">
+    <section id="how-to-use" className="bg-sky-50 py-20 md:py-24 px-6">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-sky-700 mb-4">
           ご利用はカンタン4ステップ！
@@ -149,7 +149,7 @@ function HowToUseSection() {
 
 function PricingSection() {
   return (
-    <section id="pricing" className="bg-white py-24 px-6">
+    <section id="pricing" className="bg-white py-20 md:py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-sky-700 mb-4">
@@ -220,7 +220,7 @@ function PricingSection() {
 
 function CaseStudiesSection() {
   return (
-    <section id="case-study" className="bg-sky-50 py-24 px-6">
+    <section id="case-study" className="bg-sky-50 py-20 md:py-24 px-6">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-sky-700 mb-2">
@@ -264,10 +264,10 @@ function CaseStudiesSection() {
 
 function CtaSection() {
   return (
-    <section className="relative bg-white py-24 px-6 overflow-hidden">
+    <section className="relative bg-white py-20 md:py-24 px-6 overflow-hidden">
       <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-sky-200 rounded-full opacity-50"></div>
       <div className="absolute -top-24 -right-24 w-72 h-72 bg-sky-200 rounded-full opacity-50"></div>
-      <div className="relative max-w-4xl mx-auto text-center bg-sky-50/60 backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-lg border border-white">
+      <div className="relative max-w-4xl mx-auto text-center bg-sky-50/60 backdrop-blur-sm p-10 md:p-12 rounded-2xl shadow-lg border border-white">
         <h2 className="text-2xl md:text-4xl font-bold text-sky-800 mb-4">
           さあ、あなたも「まるなげ」でビジネスを加速させませんか？
         </h2>

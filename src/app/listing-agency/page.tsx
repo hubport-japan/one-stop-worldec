@@ -37,20 +37,20 @@ const flowSteps = [
 
 function HeroSection() {
   return (
-    <section className="bg-gradient-to-r from-sky-500 to-sky-400 text-white py-24 px-6 text-center md:text-left">
+    <section className="bg-gradient-to-r from-sky-500 to-sky-400 text-white py-20 md:py-24 px-6 text-left">
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-3xl md:text-5xl font-bold mb-4"
+        className="text-4xl md:text-5xl font-bold mb-4"
       >
         出品作業、まるごとプロにおまかせ！
       </motion.h1>
-      <p className="text-lg md:text-xl mb-8 leading-relaxed">
+      <p className="text-md md:text-xl mb-8 leading-relaxed">
         あなたは仕入れるだけ。出品・登録・価格設定まで、すべて代行。
         <br />
         忙しい方や副業初心者でも、手間ゼロでEC販売を始められます。
       </p>
-      <div className="flex justify-center md:justify-start gap-4 flex-wrap">
+      <div className="flex gap-4 flex-wrap">
         <Button asChild size="lg" className="bg-white text-sky-600 hover:bg-sky-50 font-semibold">
           <Link href="/contact">
             無料で相談する
@@ -68,14 +68,14 @@ function HeroSection() {
 
 function OverviewSection() {
   return (
-    <section className="py-20 px-6 max-w-6xl mx-auto text-center md:text-left">
-      <h2 className="text-3xl font-bold text-sky-700 mb-8">出品代行サービスとは？</h2>
-      <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto mb-12">
+    <section className="py-20 px-6 max-w-4xl mx-auto text-left">
+      <h2 className="text-3xl md:text-4xl font-bold text-sky-700 mb-4">出品代行サービスとは？</h2>
+      <p className="text-md md:text-lg text-gray-600 leading-relaxed mb-12">
         あなたに代わって商品登録・説明文作成・価格設定・在庫管理などを行うサービスです。
         <br />
         「まるなげ！ザ・ワールドEC」と連携して、<strong>仕入れ→出品→配送→売上管理</strong>までをワンストップで自動化します。
       </p>
-      <div className="flex justify-center gap-6 text-gray-700">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 text-gray-700 p-4 bg-gray-50 rounded-lg">
         <span>✅ Amazon（提供中）</span>
         <span>🚀 eBay（準備中）</span>
         <span>🏪 Shopify（順次対応予定）</span>
@@ -86,7 +86,7 @@ function OverviewSection() {
 
 function FlowSection() {
   return (
-    <section className="bg-sky-50 py-20 px-6 text-center md:text-left">
+    <section className="bg-sky-50 py-20 px-6 text-left">
       <h2 className="text-3xl font-bold text-center text-sky-700 mb-12">出品代行の流れ（4ステップ）</h2>
       <div className="max-w-5xl mx-auto grid md:grid-cols-4 gap-8">
         {flowSteps.map((f, i) => {
@@ -115,11 +115,11 @@ function FeaturesSection() {
     { title: "明朗会計の手数料制", desc: "固定費なしで、販売金額の5%のみ。売上があるときだけ費用が発生します。" },
   ];
   return (
-    <section className="py-20 px-6 max-w-6xl mx-auto text-center md:text-left">
+    <section className="py-20 px-6 max-w-4xl mx-auto text-left">
       <h2 className="text-3xl font-bold text-center text-sky-700 mb-12">まるなげ出品代行の強み</h2>
       <div className="grid md:grid-cols-2 gap-8">
         {features.map((feature, i) => (
-          <Card key={i} className="shadow-sm border-none bg-white p-6">
+          <Card key={i} className="shadow-sm border-none bg-white p-6 text-left">
             <CardContent>
               <h3 className="text-xl font-bold mb-2 text-sky-700">{feature.title}</h3>
               <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
@@ -138,7 +138,7 @@ function FaqSection() {
     { q: "出品数に制限はありますか？", a: "特に上限はありません。販売規模に合わせて柔軟に対応します。" },
   ];
   return (
-    <section className="bg-gray-50 py-20 px-6 text-center md:text-left">
+    <section className="bg-gray-50 py-20 px-6 text-left">
       <h2 className="text-3xl font-bold text-center text-sky-700 mb-10">よくある質問</h2>
       <div className="max-w-3xl mx-auto space-y-6 text-left">
         {faqs.map((faq, i) => (
@@ -154,14 +154,14 @@ function FaqSection() {
 
 function CtaSection() {
   return (
-    <section className="bg-sky-500 text-white text-center md:text-left py-20 px-6">
-      <h2 className="text-3xl font-bold mb-4">出品の手間、ぜんぶプロにまるなげ！</h2>
-      <p className="mb-8 text-lg leading-relaxed">
+    <section className="bg-sky-500 text-white py-20 px-6 text-left">
+      <h2 className="text-3xl md:text-4xl font-bold mb-4">出品の手間、ぜんぶプロにまるなげ！</h2>
+      <p className="mb-8 text-md md:text-lg leading-relaxed">
         登録・在庫・価格設定・説明文作成まで、全部まとめて代行！
         <br />
         あなたは仕入れるだけでOKです。
       </p>
-      <div className="flex justify-center md:justify-start gap-4 flex-wrap">
+      <div className="flex gap-4 flex-wrap">
         <Button asChild size="lg" className="bg-white text-sky-600 hover:bg-sky-50 font-semibold">
           <Link href="/contact">無料相談する</Link>
         </Button>
