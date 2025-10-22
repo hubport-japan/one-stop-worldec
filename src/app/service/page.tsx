@@ -112,7 +112,7 @@ function CtaSection() {
       </p>
       <div className="flex justify-center gap-4 flex-wrap">
         <Button asChild size="lg" className="bg-white text-sky-600 hover:bg-sky-50 font-semibold">
-          <Link href="/plan">
+          <Link href="/#pricing">
             料金プランを見る <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
         </Button>
@@ -136,4 +136,3 @@ export default function ServicePage() {
     </>
   );
 }
-

@@ -1,43 +1,53 @@
 "use client";
 
 import Link from "next/link";
+import React from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { features, howToUseSteps, pricingPlans } from "@/lib/constants";
+import { howToUseSteps, pricingPlans, planDetails, caseStudies } from "@/lib/constants";
+import { Check, Minus } from "lucide-react";
 
 function HeroSection() {
   return (
-    <section
-      className="relative bg-cover bg-center text-white py-24 px-6 text-center"
-      style={{ backgroundImage: "url('/images/hero-background.jpg')" }}
-    >
-      <div className="absolute inset-0 bg-sky-800 opacity-70"></div>
-      <div className="relative z-10">
+    <section className="relative bg-gradient-to-br from-sky-50 to-sky-200 py-24 px-6 text-center overflow-hidden">
+      <div className="absolute -left-16 -top-16 w-64 h-64 bg-sky-200 rounded-full opacity-50"></div>
+      <div className="absolute -right-16 -bottom-16 w-64 h-64 bg-sky-200 rounded-full opacity-50"></div>
+      <div className="relative z-10 max-w-4xl mx-auto">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl md:text-5xl font-bold mb-4 text-shadow-lg"
+          className="text-3xl md:text-6xl font-extrabold mb-4 text-sky-800"
+          style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.1)" }}
         >
           海外仕入れから国内配送まで、海外物販はぜんぶおまかせ！
         </motion.h1>
-        <p className="text-base md:text-xl mb-8 leading-relaxed text-shadow-md">
+        <p className="text-md md:text-xl mb-10 leading-relaxed text-sky-700">
           <strong>まるなげ！ザ・ワールドEC</strong>（海外輸出入支援） は、<br />
           面倒な配送管理・利益計算・在庫管理をまるっとサポート。<br />
           面倒な手配や計算はもう必要なし！
         </p>
-        <div className="flex justify-center gap-4 flex-wrap">
-          <Button size="lg" className="bg-white text-sky-600 hover:bg-sky-50 font-semibold">
-            🎁 無料で相談する
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="flex justify-center gap-4 flex-wrap"
+        >
+          <Button asChild size="lg" className="bg-sky-500 text-white hover:bg-sky-600 font-semibold shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+            <Link href="/contact">
+              🎁 無料ではじめる
+            </Link>
           </Button>
-          <Button size="lg" variant="secondary" className="bg-transparent border border-white text-white hover:bg-white hover:text-sky-600">
-            💡 料金プランを見る
+          <Button asChild size="lg" variant="outline" className="bg-white/50 border-sky-300 text-sky-600 hover:bg-white font-semibold shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+            <Link href="/#pricing">
+              💡 料金プラン
+            </Link>
           </Button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -45,48 +55,93 @@ function HeroSection() {
 
 function FeaturesSection() {
   return (
-    <section className="py-20 px-6 max-w-6xl mx-auto text-center">
-      <h2 className="text-2xl md:text-3xl font-bold text-sky-700">まるなげ！が選ばれる3つのポイント</h2>
-      <p className="text-base md:text-lg text-gray-600 mt-4 mb-12">事業を加速させる、シンプルで強力な機能</p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {features.map((feature) => {
-          const Icon = feature.icon;
-          return (
-            <Card key={feature.id} className="border-none shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-              <CardContent className="py-10">
-                <Icon className="w-10 h-10 text-sky-500 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-2 text-sky-700">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed mb-4">{feature.desc}</p>
-                {feature.id === "feature-3" && (
-                  <Button asChild variant="outline" size="sm">
-                    <Link href="/listing-agency">
-                      出品代行サービスを見る
-                    </Link>
-                  </Button>
-                )}
-              </CardContent>
-            </Card>
-          );
-        })}
+    <section id="features" className="py-24 px-6">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-sky-700 mb-2">
+            まるなげ！が選ばれる理由
+          </h2>
+          <p className="text-gray-600 md:text-lg">
+            海外仕入れから国内配送まで、ぜ〜んぶおまかせ。
+          </p>
+        </div>
+
+        <div className="space-y-20">
+          {[
+            {
+              image: "/images/feature-illust-01.png",
+              title: "損益も自動でパッと見える！",
+              desc: "注文・配送・経費を自動計算。利益がどれくらい出ているか、すぐにチェックできます。",
+              note: "💡 Pro・Bizプラン限定で損益シミュレーション対応。",
+            },
+            {
+              image: "/images/feature-illust-02.png",
+              title: "荷受けからお届けまで全部おまかせ！",
+              desc: "海外→日本までの配送をワンストップで管理。荷受手数料も国内配送手数料もぜんぶ0円！",
+              note: "🚀 最短当日発送にも対応（お急ぎ便プラン）",
+            },
+            {
+              image: "/images/feature-illust-03.png",
+              title: "仕入れも出品も“ほぼ自動化”",
+              desc: "提携の出品代行サービスと組み合わせれば、まるで自動販売機のように動きます。",
+              note: (
+                <Button asChild variant="outline" className="mt-4 text-sky-600 border-sky-300 hover:bg-sky-100">
+                  <Link href="/listing-agency">出品代行サービスを見る</Link>
+                </Button>
+              ),
+            },
+          ].map((feature, index) => (
+            <div key={index} className={`flex flex-col md:flex-row items-center gap-12 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
+              <div className="md:w-3/5">
+                <Image src={feature.image} alt={feature.title} width={500} height={375} className="mx-auto rounded-lg shadow-2xl" />
+              </div>
+              <div className={`md:w-1/2 relative ${index % 2 !== 0 ? 'md:-mr-16' : 'md:-ml-16'}`}>
+                <Card className="shadow-xl">
+                  <CardContent className="p-6 md:p-8">
+                    <h3 className="text-xl md:text-2xl font-bold text-sky-700 mb-4">{feature.title}</h3>
+                    <p className="text-gray-600 leading-relaxed mb-4">{feature.desc}</p>
+                    <div className="text-md text-gray-500">{feature.note}</div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-     </section>
+    </section>
   );
 }
 
 function HowToUseSection() {
   return (
-    <section className="bg-sky-50 py-20 px-6">
-      <h2 className="text-2xl md:text-3xl font-bold text-center text-sky-700 mb-12">ご利用はカンタン4ステップ！</h2>
-      <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-        {howToUseSteps.map((s) => (
-          <Card key={s.id} className="text-center border-none shadow-lg bg-white hover:shadow-xl transition-shadow duration-300">
-            <CardContent className="py-8">
-              <div className="text-sky-600 font-bold mb-2">{s.step}</div>
-              <h3 className="text-lg font-semibold mb-2 text-sky-700">{s.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
-            </CardContent>
-          </Card>
-        ))}
+    <section id="how-to-use" className="bg-sky-50 py-24 px-6">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-sky-700 mb-4">
+          ご利用はカンタン4ステップ！
+        </h2>
+        <p className="text-gray-600 md:text-lg mb-16">
+          お申し込み後、すぐにサービスをご利用いただけます。
+        </p>
+        <div className="relative grid md:grid-cols-4 gap-8 md:gap-0">
+          {howToUseSteps.map((s, i) => {
+            const Icon = s.icon;
+            return (
+              <div key={s.id} className="relative flex flex-col items-center px-4">
+                <div className="relative z-10 flex items-center justify-center w-24 h-24 bg-white rounded-full shadow-lg border-4 border-sky-100">
+                  <Icon className="w-12 h-12 text-sky-500" />
+                </div>
+                <div className="mt-4">
+                  <div className="text-sky-600 font-bold mb-2">{s.step}</div>
+                  <h3 className="text-xl font-semibold mb-2 text-sky-800">{s.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
+                </div>
+                {i < howToUseSteps.length - 1 && (
+                  <div className="hidden md:block absolute top-12 left-1/2 w-full h-1 bg-sky-200" />
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
@@ -94,21 +149,114 @@ function HowToUseSection() {
 
 function PricingSection() {
   return (
-    <section className="py-20 px-6 max-w-6xl mx-auto">
-      <h2 className="text-2xl md:text-3xl font-bold text-center text-sky-700 mb-12">荷受手数料0円・国内配送手数料0円で、明朗会計！</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {pricingPlans.map((p) => (
-          <Card key={p.id} className="text-center border-none bg-gradient-to-br from-sky-50 to-sky-100 shadow-lg hover:shadow-2xl transition-all duration-300">
-            <CardContent className="py-10">
-              <h3 className="text-xl font-bold text-sky-600 mb-2">{p.plan}</h3>
-              <p className="text-2xl font-semibold mb-3">{p.price}</p>
-              <p className="text-gray-600 mb-3 leading-relaxed">{p.desc}</p>
-              <p className="font-semibold text-gray-800 mb-1">配送管理手数料：{p.fee}</p>
-              <p className="text-sm text-gray-500 mb-4">{p.sub}</p>
-              <Button className="mt-2 bg-sky-500 text-white hover:bg-sky-600">このプランで始める</Button>
-            </CardContent>
-          </Card>
-        ))}
+    <section id="pricing" className="py-24 px-6">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-sky-700 mb-4">
+            あなたにぴったりの料金プラン
+          </h2>
+          <p className="text-gray-600 md:text-lg">
+            荷受・国内配送料はいつでも0円。シンプルで分かりやすい料金体系です。
+          </p>
+        </div>
+
+        <div className="overflow-x-auto rounded-lg shadow-lg border border-gray-200">
+          <table className="w-full min-w-[700px] border-collapse text-center bg-white">
+            <thead>
+              <tr className="bg-sky-50">
+                <th className="w-1/4 p-6 text-left font-semibold text-sky-800">機能</th>
+                {pricingPlans.map((p) => (
+                  <th key={p.id} className="w-1/4 p-6 border-l border-gray-200">
+                    <h3 className="text-xl font-bold text-sky-600">{p.plan}</h3>
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {planDetails.features.map((category) => (
+                <React.Fragment key={category.category}>
+                  <tr>
+                    <td colSpan={4} className="text-left font-bold bg-gray-100 p-3 text-gray-700 border-t border-gray-200">
+                      {category.category}
+                    </td>
+                  </tr>
+                  {category.items.map((item) => (
+                    <tr key={item.name} className="border-t border-gray-200">
+                      <td className="text-left p-4 font-medium text-gray-800">{item.name}</td>
+                      {item.values.map((value, index) => (
+                        <td key={index} className="p-4 text-gray-600 border-l border-gray-200">
+                          {value === "✓" ? (
+                            <Check className="mx-auto text-green-500" />
+                          ) : value === "-" ? (
+                            <Minus className="mx-auto text-gray-400" />
+                          ) : (
+                            <span className="font-semibold text-sm md:text-base">{value}</span>
+                          )}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </React.Fragment>
+              ))}
+            </tbody>
+            <tfoot>
+              <tr className="bg-gray-50">
+                <td></td>
+                {pricingPlans.map((p) => (
+                  <td key={p.id} className="p-6 border-l border-gray-200">
+                    <Button asChild className="w-full bg-sky-500 hover:bg-sky-600">
+                      <Link href="/contact">このプランで始める</Link>
+                    </Button>
+                  </td>
+                ))}
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CaseStudiesSection() {
+  return (
+    <section id="case-study" className="bg-white py-24 px-6">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-sky-700 mb-2">
+            お客様の声・導入事例
+          </h2>
+          <p className="text-gray-600 md:text-lg">
+            「まるなげ！」でビジネスを加速させたお客様の声をご紹介します。
+          </p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {caseStudies.map((study) => (
+            <Card key={study.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+              <div className="relative h-48 w-full bg-gray-200">
+                <Image
+                  src={study.image}
+                  alt={study.user}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+              <CardContent className="p-6 flex-grow flex flex-col">
+                <p className="font-semibold text-sky-700 mb-2">{study.user}</p>
+                <p className="text-sm text-gray-600 mb-4 flex-grow">「{study.quote}」</p>
+                <div className="bg-sky-50 p-4 rounded-lg text-center mb-4">
+                  <p className="text-sm text-gray-500 line-through">{study.before}</p>
+                  <p className="font-bold text-sky-600 text-lg">{study.after}</p>
+                </div>
+                <div className="text-center">
+                  <span className="inline-block bg-yellow-300 text-yellow-800 text-sm font-bold px-3 py-1 rounded-full">
+                    {study.result}
+                  </span>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -116,12 +264,28 @@ function PricingSection() {
 
 function CtaSection() {
   return (
-    <section className="bg-gradient-to-r from-sky-600 to-sky-400 text-white text-center py-20 px-6">
-      <h2 className="text-2xl md:text-3xl font-bold mb-4">海外輸入を、もっとやさしく。</h2>
-      <p className="mb-8 text-base md:text-lg leading-relaxed">むずかしいことはナシ！<br />管理・配送・損益計算まで、全部“まるなげ”しちゃおう。</p>
-      <div className="flex justify-center gap-4 flex-wrap">
-        <Button size="lg" className="bg-white text-sky-600 hover:bg-sky-50 font-semibold">無料相談する</Button>
-        <Button size="lg" variant="secondary" className="border border-white text-white hover:bg-white hover:text-sky-600">資料をもらう</Button>
+    <section className="relative bg-sky-50 py-24 px-6 overflow-hidden">
+      <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-sky-200 rounded-full opacity-50"></div>
+      <div className="absolute -top-24 -right-24 w-72 h-72 bg-sky-200 rounded-full opacity-50"></div>
+      <div className="relative max-w-4xl mx-auto text-center bg-white/60 backdrop-blur-sm p-12 rounded-2xl shadow-lg border border-white">
+        <h2 className="text-2xl md:text-4xl font-bold text-sky-800 mb-4">
+          さあ、あなたも「まるなげ」でビジネスを加速させませんか？
+        </h2>
+        <p className="text-md md:text-lg text-gray-600 mb-10 leading-relaxed">
+          面倒な作業はすべておまかせ。
+          <br />
+          今すぐ無料登録して、海外物販の新しいステージへ。
+        </p>
+        <div className="flex justify-center gap-4 flex-wrap">
+          <Button asChild size="lg" className="bg-sky-500 text-white hover:bg-sky-600 font-semibold shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+            <Link href="/contact">
+              無料で相談する
+            </Link>
+          </Button>
+          <Button asChild size="lg" variant="outline" className="bg-white/50 border-sky-300 text-sky-600 hover:bg-white font-semibold shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+            <Link href="/#pricing">料金プランを見る</Link>
+          </Button>
+        </div>
       </div>
     </section>
   );
@@ -136,6 +300,7 @@ export default function HomePage() {
         <FeaturesSection />
         <HowToUseSection />
         <PricingSection />
+        <CaseStudiesSection />
         <CtaSection />
       </main>
       <Footer />

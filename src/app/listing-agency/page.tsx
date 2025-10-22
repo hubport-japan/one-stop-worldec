@@ -50,11 +50,15 @@ function HeroSection() {
         忙しい方や副業初心者でも、手間ゼロでEC販売を始められます。
       </p>
       <div className="flex justify-center gap-4 flex-wrap">
-        <Button size="lg" className="bg-white text-sky-600 hover:bg-sky-50 font-semibold">
-          無料で相談する
+        <Button asChild size="lg" className="bg-white text-sky-600 hover:bg-sky-50 font-semibold">
+          <Link href="/contact">
+            無料で相談する
+          </Link>
         </Button>
-        <Button size="lg" variant="secondary" className="bg-transparent border border-white text-white hover:bg-white hover:text-sky-600">
-          オンライン相談を予約
+        <Button asChild size="lg" variant="secondary" className="bg-transparent border border-white text-white hover:bg-white hover:text-sky-600">
+          <Link href="/contact">
+            オンライン相談を予約
+          </Link>
         </Button>
       </div>
     </section>
@@ -157,8 +161,12 @@ function CtaSection() {
         あなたは仕入れるだけでOKです。
       </p>
       <div className="flex justify-center gap-4 flex-wrap">
-        <Button size="lg" className="bg-white text-sky-600 hover:bg-sky-50 font-semibold">無料相談する</Button>
-        <Button size="lg" variant="secondary" className="border border-white text-white hover:bg-white hover:text-sky-600">オンライン相談を予約</Button>
+        <Button asChild size="lg" className="bg-white text-sky-600 hover:bg-sky-50 font-semibold">
+          <Link href="/contact">無料相談する</Link>
+        </Button>
+        <Button asChild size="lg" variant="secondary" className="border border-white text-white hover:bg-white hover:text-sky-600">
+          <Link href="/contact">オンライン相談を予約</Link>
+        </Button>
       </div>
     </section>
   );
@@ -180,4 +188,3 @@ export default function ListingAgencyPage() {
     </>
   );
 }
-

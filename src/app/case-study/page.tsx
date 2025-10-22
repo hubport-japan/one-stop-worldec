@@ -62,8 +62,10 @@ function CtaSection() {
         まずは無料相談で、あなたの課題をお聞かせください。
       </p>
       <div className="flex justify-center gap-4 flex-wrap">
-        <Button size="lg" className="bg-white text-sky-600 hover:bg-sky-50 font-semibold">
-          無料で相談してみる <ArrowRight className="ml-2 h-5 w-5" />
+        <Button asChild size="lg" className="bg-white text-sky-600 hover:bg-sky-50 font-semibold">
+          <Link href="/contact">
+            無料で相談してみる <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
         </Button>
       </div>
     </section>
@@ -83,4 +85,3 @@ export default function CaseStudyPage() {
     </>
   );
 }
-
