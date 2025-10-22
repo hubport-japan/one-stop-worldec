@@ -53,15 +53,6 @@ function FeaturesSection() {
           const Icon = feature.icon;
           return (
             <Card key={feature.id} className="border-none shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-              <div className="relative h-48 w-full">
-                <Image
-                  src={feature.image}
-                  alt={feature.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-t-lg"
-                />
-              </div>
               <CardContent className="py-10">
                 <Icon className="w-10 h-10 text-sky-500 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-2 text-sky-700">{feature.title}</h3>
