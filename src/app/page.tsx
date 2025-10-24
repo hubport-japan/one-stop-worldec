@@ -61,29 +61,34 @@ function FeaturesSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-sky-700 mb-2">
             まるなげ！が選ばれる理由
           </h2>
-          <p className="text-gray-600 text-md md:text-lg max-w-2xl mx-auto">
-            海外仕入れから国内配送まで、ぜ〜んぶおまかせ。
+          <p className="text-gray-600 text-md md:text-lg max-w-2xl mx-auto text-left">
+            海外物販を成功させるためには、「仕入れ」「物流」「在庫」「出荷」「利益管理」など、複数の工程を効率よく回すことが鍵です。<br />
+            しかし、これらすべてを個人や少人数で管理するのは大変…。<br />
+            そこで「まるなげ！ザ・ワールドEC」は、３つの主要なサポートを柱に、あなたの物販ビジネスを“シンプルで強い仕組み”に変えます。
           </p>
         </div>
 
         <div className="space-y-16 md:space-y-20">
           {[
             {
+              id: 1,
               image: "/images/feature-illust-01.png",
               title: "損益も自動でパッと見える！",
-              desc: "注文・配送・経費を自動計算。利益がどれくらい出ているか、すぐにチェックできます。",
-              note: "💡 Pro・Bizプラン限定で損益シミュレーション対応。",
+              desc: "注文データ、配送状況、経費情報――これらを別々に管理していませんか？\nまるなげ！では、自動取得されたデータをひとつの管理シートに統合。どれくらい利益が出ているのか、どこにコストがかかっているのか、“見えなかった部分”を可視化します。",
+              note: "💡 Pro／Bizプランでは、さらに「損益シミュレーション機能」も付属。仕入れ前に利益を仮算出して、安心して商品を動かせます。",
             },
             {
+              id: 2,
               image: "/images/feature-illust-02.png",
               title: "荷受けからお届けまで全部おまかせ！",
-              desc: "海外→日本までの配送をワンストップで管理。荷受手数料も国内配送手数料もぜんぶ0円！",
-              note: "🚀 最短当日発送にも対応（お急ぎ便プラン）",
+              desc: "仕入れた商品が海外から届き、国内のお客様に手元に届くまでには、多くの手配が必要です。\nでも「まるなげ！」なら、米国などの海外倉庫での荷受け → まとめ発送 → 国内指定住所への配送までを一括で行います。",
+              note: "🚀 「荷受手数料0円」「国内配送手数料0円」でコストも明確。さらに、お急ぎ便オプションで国内着荷を当日発送できるケースもご用意しています。",
             },
             {
+              id: 3,
               image: "/images/feature-illust-03.png",
               title: "仕入れも出品も“ほぼ自動化”",
-              desc: "提携の出品代行サービスと組み合わせれば、まるで自動販売機のように動きます。",
+              desc: "物販での成功は「仕入れる→出品する→販売する」のサイクルを高速に回せるかにかかっています。\nまるなげ！では、提携の出品代行サービスと連携して、出品作業・在庫更新・価格設定などの業務を自動化。\nつまり、あなたは「仕入れ」に専念するだけで、あとはシステムと運用チームが“まるで自動販売機”のように動く物販構造をサポートします。",
               note: (
                 <Button asChild variant="outline" className="mt-4 text-sky-600 border-sky-300 hover:bg-sky-100">
                   <Link href="/listing-agency">出品代行サービスを見る</Link>
@@ -91,21 +96,33 @@ function FeaturesSection() {
               ),
             },
           ].map((feature, index) => (
-            <div key={index} className={`py-12 px-6 ${index % 2 !== 0 ? 'bg-sky-50' : 'bg-white'}`}>
+            <div key={feature.id} className={`py-12 px-6 ${index % 2 !== 0 ? 'bg-sky-50' : 'bg-white'}`}>
               <div className={`md:flex md:items-center md:gap-8 max-w-6xl mx-auto ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
                 <div className="md:w-3/5 mb-8 md:mb-0">
                   <Image src={feature.image} alt={feature.title} width={500} height={375} className="mx-auto rounded-lg shadow-2xl" />
                 </div>
-                <div className={`text-center md:text-left md:w-1/2 md:relative ${index % 2 !== 0 ? 'md:ml-0 md:-mr-12' : 'md:-ml-12'}`}>
+                <div className={`text-left md:w-1/2 md:relative ${index % 2 !== 0 ? 'md:ml-0 md:-mr-12' : 'md:-ml-12'}`}>
                   <div className="md:shadow-xl md:bg-white md:rounded-lg p-6 md:p-8">
                     <h3 className="text-2xl font-bold text-sky-700 mb-4">{feature.title}</h3>
-                    <p className="text-gray-600 leading-relaxed mb-4">{feature.desc}</p>
+                    <p className="text-gray-600 leading-relaxed mb-4 whitespace-pre-line">{feature.desc}</p>
                     <div className="text-md text-gray-500">{feature.note}</div>
                   </div>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-20 max-w-4xl mx-auto text-center bg-gradient-to-r from-sky-500 to-blue-500 text-white p-10 md:p-12 rounded-2xl shadow-2xl">
+          <h3 className="text-2xl md:text-3xl font-bold mb-6" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.2)' }}>
+            🎯 会社員の方、専業主婦の方、物販初心者も、みんなまるなげ！
+          </h3>
+          <p className="text-sky-50 leading-relaxed text-center text-md md:text-lg">
+            一人で商品を探して、物流を手配して、計算して…<br />
+            そんな負担から解放されたい方へ。<br />
+            「まるなげ！ザ・ワールドEC」で、海外仕入れから国内お届けまで、ぜんぶおまかせ。<br />
+            さあ、あなたの物販ビジネスを次のステージへ。
+          </p>
         </div>
       </div>
     </section>

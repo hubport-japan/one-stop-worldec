@@ -11,9 +11,9 @@ export const howToUseSteps = [
   {
     id: "step-2",
     step: "STEP 2",
-    icon: FilePlus2,
-    title: "注文情報を入れる",
-    desc: "仕入れ商品をシートに入力。経費や利益を自動計算！",
+    icon: FilePlus2, // アイコンはそのまま
+    title: "アカウント連携",
+    desc: "連携が終われば、あなた専用の管理シートに注文情報が自動で入ってきます。",
   },
   {
     id: "step-3",
@@ -26,8 +26,8 @@ export const howToUseSteps = [
     id: "step-4",
     step: "STEP 4",
     icon: BarChart,
-    title: "結果をチェック！",
-    desc: "損益シミュレーションで、しっかり黒字をキープ。",
+    title: "複数アカウントで利益を最大化！",
+    desc: "手離れの良い仕組みだから、複数アカウント運用も楽々",
   },
 ];
 
